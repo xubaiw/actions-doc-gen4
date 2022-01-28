@@ -32,6 +32,6 @@ runs:
       shell: bash
     - name: Generate Documentation
       run: |
-        cd ${{ github.dir }}
-        ./doc-gen4/build/bin/doc-gen4 ${{ github.root-url }} ${{ github.modules }}
+        cd ${{ inputs.dir }}
+        ./doc-gen4/build/bin/doc-gen4 ${{ inputs.root-url }} ${{ inputs.modules }}
       shell: bash
