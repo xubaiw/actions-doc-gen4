@@ -13,5 +13,10 @@ GitHub Action for doc-gen4
         root-url: <your root url>       # default: /
         modules: <your modules>         # required
         dir: <your checkout directory>  # default: .
+    - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        with:
+          branch: gh-pages 
+          folder: build/doc
 ```
 
