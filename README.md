@@ -14,7 +14,7 @@ GitHub Action for doc-gen4
         modules: <your modules>                       # e.g. Socket
         dir: <your checkout directory>                # default: .
         doc-gen4-repo: <alternative docgen repo>      # default: https://github.com/leanprover/doc-gen4.git
-        doc-gen4-repo: <alternative docgen checkout>  # default: main
+        doc-gen4-checkout: <alternative docgen checkout>  # default: main
 
 
     - name: Deploy
