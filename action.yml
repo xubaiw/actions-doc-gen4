@@ -5,7 +5,6 @@ inputs:
   root-url:
     description: 'The root url'
     required: true
-    default: '/'
   modules:
     description: 'Modules to generate doc'
     required: true
@@ -13,6 +12,14 @@ inputs:
     description: 'Directory of the repo'
     required: false
     default: '.'
+  doc-gen4-repo:
+    description: 'Repository of the doc-gen4'
+    required: false
+    default: 'https://github.com/leanprover/doc-gen4.git'
+  doc-gen4-checkout:
+    description: 'Checkou point of the doc-gen4'
+    required: false
+    default: 'main'
 runs:
   using: "composite"
   steps:
@@ -25,8 +32,9 @@ runs:
       shell: bash
     - name: Install DocGen4
       run: |
-        git clone https://github.com/leanprover/doc-gen4.git
+        git clone ${{ inputs.doc-gen4-repo }} doc-gen4
         cd doc-gen4
+        git checkout ${{ inputs.doc-gen4-checkout }}
         lake build
         cd ..
       shell: bash
